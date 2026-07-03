@@ -42,4 +42,5 @@ The C++ logic is entirely interrupt-driven, minimizing processor polling cycles 
 | **Logic Controller** | ESP32 Microcontroller | Interrupt-driven signal processing & state logic. |
 | **Power Switching** | IRLZ44N N-Channel MOSFET | Logic-level high-current inductive load control. |
 | **Load Protection** | 1N4004 Flyback Diode | Inductive kickback clamping for motor safety. |
+| **Actuation** | 5v BLDC Fan | Fan spinning |
 | **Diagnostic** | Yellow/Green LEDs | Real-time hardware-level system status indication. |
