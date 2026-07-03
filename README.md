@@ -1,3 +1,4 @@
+
 # Analog-to-Digital Acoustic Signal Pipeline & Isolated Load Controller
 Jeremy Ndirangu
 
@@ -29,3 +30,16 @@ Internal microcontroller pull-ups are strictly prohibited in this design archite
 
 ## 💻 Firmware
 The C++ logic is entirely interrupt-driven, minimizing processor polling cycles and allowing for concurrent operations. The source code is available in `firmware/main`.
+
+## ## 📊 Bill of Materials
+| Stage | Component | Role |
+| :--- | :--- | :--- |
+| **Transducers** | KY-038 Electret Mic | Acoustic-to-electrical signal conversion. |
+| **Analog Pre-Amp** | LM324 Quad Op-Amp | 101x non-inverting gain & virtual ground biasing. |
+| **Envelope Detection** | 1N4004 Power Diode | Half-wave rectification for AC-to-DC envelope conversion. |
+| **Logic Thresholding** | LM324 Op-Amp | Hysteresis-based Schmitt Trigger digitizer. |
+| **Level Shifter** | 2N2222 NPN BJT | Isolated logic translation (1.95V to 3.3V). |
+| **Logic Controller** | ESP32 Microcontroller | Interrupt-driven signal processing & state logic. |
+| **Power Switching** | IRLZ44N N-Channel MOSFET | Logic-level high-current inductive load control. |
+| **Load Protection** | 1N4004 Flyback Diode | Inductive kickback clamping for motor safety. |
+| **Diagnostic** | Yellow/Green LEDs | Real-time hardware-level system status indication. |
